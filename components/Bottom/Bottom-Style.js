@@ -1,23 +1,31 @@
 import { StyleSheet } from "react-native";
 
 export default styles = StyleSheet.create({
-  main_container: {
+  buttons_container: {
+    flex: 1,
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-around",
     height: "100%",
     width: "100%",
   },
-  top_container: {
-    flex: 0.2,
+  left_container: {
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },
-  camera_container: {
-    flex: 0.6,
+  middle_container: {
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },
-  bottom_container: {
-    flex: 0.2,
+
+  right_container: {
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
+  },
+  text: {
+    color: "#d4c",
   },
 });
