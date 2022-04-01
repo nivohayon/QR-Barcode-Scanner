@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react";
+import { View } from "react-native";
+import { MetadataContext } from "./context/MetadataContext";
+import { HasScannedContext } from "./context/HasScannedContext";
+import styles from "./App-Style";
+import Main from "./components/Main/Main";
+import metadata from "./context/metadata.json";
 
 export default function App() {
+  const [hasScanned, setHasScanned] = useState(false);
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <HasScannedContext.Provider value={{ hasScanned, setHasScanned }}>
+      <MetadataContext.Provider value={metadata}>
+        <View style={styles.container}>
+          <Main />
+        </View>
+      </MetadataContext.Provider>
+    </HasScannedContext.Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

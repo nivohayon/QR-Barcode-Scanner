@@ -1,0 +1,7 @@
+{
+  "texts": {
+    "AlertHasScannedText": "Do you want to open the link? ",
+    "CantOpenTitle": "Something Went Wrong ...",
+    "CantOpenText": "Cant Open The Barcode Data!"
+  }
+}
