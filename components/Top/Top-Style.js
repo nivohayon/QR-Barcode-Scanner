@@ -8,7 +8,8 @@ export default styles = StyleSheet.create({
     height: "100%",
     width: "100%",
   },
-  text: {
-    color: "#d4c"
-  }
+  ad_image: {
+    height: "100%",
+    width: "100%",
+  },
 });

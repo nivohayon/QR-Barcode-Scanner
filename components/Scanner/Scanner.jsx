@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Text, View, StyleSheet, Button } from "react-native";
-import { BarCodeScanner } from "expo-barcode-scanner";
+import { Camera } from "expo-camera";
 import styles from "./Scanner-Style";
 import showAlert from "../showAlert/showAlert";
 import { MetadataContext } from "../../context/MetadataContext";
@@ -56,11 +56,11 @@ const Scanner = () => {
   // Effects
   useEffect(() => {
     async function getPermissions() {
-      const { status } = await BarCodeScanner.getPermissionsAsync();
+      const { status } = await Camera.getCameraPermissionsAsync();
       return status;
     }
     async function requestPermissions() {
-      const { status } = await BarCodeScanner.requestPermissionsAsync();
+      const { status } = await Camera.requestCameraPermissionsAsync();
       setHasPermission(status === "granted");
     }
 
@@ -79,7 +79,7 @@ const Scanner = () => {
   // Renders
 
   if (hasPermission === null) {
-    return <Text>Requesting for camera permission</Text>;
+    return <Text>Getting camera permission</Text>;
   }
   if (hasPermission === false) {
     return <Text>No access to camera</Text>;
@@ -87,9 +87,9 @@ const Scanner = () => {
   return (
     <View style={styles.container}>
       {!hasScanned && (
-        <BarCodeScanner
+        <Camera
           onBarCodeScanned={hasScanned ? null : handleBarCodehasScanned}
-          style={styles.scanner}
+          style={StyleSheet.absoluteFillObject}
         />
       )}
     </View>

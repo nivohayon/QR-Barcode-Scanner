@@ -13,19 +13,25 @@ export default styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor:"#d4c",
+    height: "100%",
+    width: "100%",
   },
   middle_container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor:"#f55",
+    height: "100%",
+    width: "100%",
   },
 
   right_container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-  },
-  text: {
-    color: "#d4c",
+    backgroundColor:"#4cd",
+    height: "100%",
+    width: "100%",
   },
 });
